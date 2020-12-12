@@ -1,0 +1,41 @@
+# --- General options --- #
+
+baseurl: "/yule"
+
+title: Yule Pizza
+
+# Paths
+defaults:
+    -
+        scope:
+            path: "pages"
+            type: pages
+        values:
+            layout: page
+    -
+        scope:
+            path: ""
+            type: posts
+        values:
+            layout: post
+            comments: true
+    -
+        scope:
+            path: "_episodes"
+            type: episode
+        values:
+            layout: episode
+
+# Build settings
+exclude: ["_site", "vendor", ".circleci"]
+
+markdown:          kramdown
+comments: true
+paginate:          5
+paginate_path: "/posts/page:num/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-redirect-from
